@@ -78,6 +78,13 @@
        });
  ```
  
++ Tìm Kiếm
+ 
++ So Sánh
+
++ Sắp Xếp
+
+
 + cơ chế hoạt động của Iterator như thế nào:
  + tạo 1 con trỏ đầu danh sách và truy xuất tuần tự từng phần tử trong danh sách đó
 
@@ -218,6 +225,33 @@ while (iterator.hasNext()) {
 ### HashMap và HashTable khác nhau thế nào 
 ![hashmap-hashtable](https://cloud.githubusercontent.com/assets/18228937/23584639/8035b08e-0199-11e7-81ae-37e7ca725cdd.png)
 
-***HashMap***
 
-***
+## Quece </br>
+
+Quece(hàng đợi) là một Interface con của Collection . nó khá giống với List, tuy nhiên mục đích sử dụng hơi khác nhau. Queue được thiết kế để bạn chỉ có thể truy cập phần tử ở đầu hàng đợi.
+
++ Là tập hợp cho phép các phần tử trùng lặp.
++ Không cho phép phần tử null.
++ Có hai class thi hành interface Queue.
+ + java.util.LinkedList
+  + java.util.PriorityQueue
+  
+![method](https://cloud.githubusercontent.com/assets/18228937/23585707/ca7c37da-01b7-11e7-81c8-30d186a84f9c.png)
+
++  offer(E)
+Trèn phần tử vào hàng đợi nếu có thể làm điều đó ngay lập tức nếu không bị giới hạn bởi kích thước hàng đợi. Khi sử dụng hàng đợi có kích thước giới hạn, phương thức này khá giống với add(E), tuy nhiên phương thức này không ném ra ngoại lệ khi không trèn được phần tử vào hàng đợi, mà nó trả về false trong tình huống đó. 
+
++ add(E)
+Trèn một phần tử vào hàng đợi nếu có thể làm điều này ngay lập tức mà không bị giới hạn bởi kích thước hàng đợi, trả về true nếu thành công, ngược lại nó sẽ ném ra ngoại lệ IllegalStateException khi hàng đợi không còn chỗ.
+
++ remove()
+Lấy ra và loại bỏ luôn phần tử đầu tiên của hàng đợi. Phương thức này chỉ khác với poll() ở chỗ nếu hàng đợi không có phần tử ngoại lệ sẽ bị ném ra. 
+
++ poll()
+Lấy ra và loại bỏ phần tử đầu tiên trong hàng đợi, hoặc trả về null nếu hàng đợi không có phần tử nào. 
+
++ element()
+Lấy ra nhưng không loại bỏ phần tử đứng đầu của hàng đợi. Phương thức này chỉ khác với peek() là nó ném ra ngoại lệ nếu hàng đợi không có phần tử.
+
++ peek()
+Lấy ra, nhưng không loại bỏ phần tử đầu tiên trong hàng đợi, hoặc trả về null nếu hàng đợi không có phần tử nào. 
