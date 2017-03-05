@@ -78,11 +78,19 @@
        });
  ```
  
-+ Tìm Kiếm
- 
-+ So Sánh
-
 + Sắp Xếp
+```
+ List arrList = new ArrayList();
+        SinhVien sv = SinhVien.getInstance();
+        sv.setMaSV(19);
+        sv.setTenSV("deptrai");
+        arrList.add("hien");
+        arrList.add(sv);
+        
+        
+ // class SinhVien
+ 
+```
 
 
 + cơ chế hoạt động của Iterator như thế nào:
