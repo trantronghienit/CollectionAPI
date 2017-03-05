@@ -140,7 +140,59 @@ public int compareTo(Dog o) {
 + [Map hoạt động thế nào ?](https://kipalog.com/posts/Java-nhung-dieu-co-the-ban-da-biet--Map-HashMap-hoat-dong-nhu-the-nao)
 
 ### Sử Dụng thế nào ?
+***1 . Lấy toàn bộ entry của Map***
 
+```
+ cách 1: for-each
+ // tại sao map.entrySet() lại trả về 1 kiểu set ?
+  Set<Map.Entry<Integer, SinhVien>> entrySet = map.entrySet();
+        for (Map.Entry<Integer, SinhVien> entry : entrySet) {
+             System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+        }
+// vì một entry là 1 set vì tính chất chúng không trùng nhau , nói cách khác vì Map là tập hợp nhiều set 
+// - vì sao lại đánh dấu Map.Entry<Integer, SinhVien> => vì Entry nằm trong Map  , đánh dấu để biết set đó kiểu gì 
+
+cách 2 : dùng Iterator 
+
+Iterator<Map.Entry<Integer, SinhVien>> iterator = map.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry<Integer, SinhVien> entry = iterator.next();
+            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+        }
+        
+```
+
+***2 . Lấy toàn bộ key của Map***
+```
+for (Integer key : map.keySet()) {
+    System.out.println("Key = " + key);
+}
+
+//=============== Iterator =======
+Iterator<Integer> iterator = map.keySet().iterator();
+while (iterator.hasNext()) {
+    Integer key = iterator.next();
+    System.out.println("Key = " + key);
+}
+```
+
+***3. Lấy toàn bộ value của Map***
+```
+for (Integer value : map.values()) {
+    System.out.println("Value = " + value);
+}
+
+//==================
+
+Iterator<Integer> iterator = map.values().iterator();
+while (iterator.hasNext()) {
+    Integer value = iterator.next();
+    System.out.println("Value = " + value);
+}
+
+```
+
+== > Có thể lấy toàn bộ key của Map, sau đó lấy value tương ứng .
 
 ### HashMap và HashTable khác nhau thế nào 
 ![hashmap-hashtable](https://cloud.githubusercontent.com/assets/18228937/23584639/8035b08e-0199-11e7-81ae-37e7ca725cdd.png)
