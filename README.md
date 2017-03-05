@@ -59,6 +59,14 @@
              System.out.print(element + " ");
         }
         
+  // forEach 1.8   // list.forEach(Comsumer)
+   list.forEach(new Consumer<SinhVien>() {
+           @Override
+           public void accept(SinhVien t) {
+               // t là 1 đối tượng khi mỗi lần lặp thì nó tra về 1 đối tượng chúng ta có thể dùng đối tượng để in ra hay so sánh ...
+           }
+       });
+        
  //lamda
  ArrayList<SinhVien> list = new ArrayList();
        list.add(new SinhVien(1, "adad"));
@@ -81,7 +89,10 @@
 
 + set thì giống list ***nhưng một phần tử đưa vào được sắp xếp và không có lấy ra 1 phần tử bất kì như list mà phải lặp dần*** 
 + set ***không có tính trùng nhau*** nên nếu có add 2 hay nhiều phần tử trùng nhau vào set thì nó coi như 1 
-+ ***Lưu ý*** : set thì không an toàn trong đa luồng , phải sử dụng synchronize bên ngoài nếu cần. 
++ ***Lưu ý*** :
+  + set thì không an toàn trong đa luồng , phải sử dụng synchronize bên ngoài nếu cần. 
+  + set thì do tính chất là so sánh nên nếu chúng ta cố tình add kiểu dữ liệu khác nhau vào Set nó sẽ báo lỗi
+  + hoặc ta add vào 1 đối tượng nhưng chưa cài đè hàm compareTo cho object cũng dễ khiến sinh ra lỗi 
 
 ### Sử Dụng thế nào ?
 
