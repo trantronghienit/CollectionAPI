@@ -71,7 +71,7 @@
 
 + set thì giống list ***nhưng một phần tử đưa vào được sắp xếp và không có lấy ra 1 phần tử bất kì như list mà phải lặp dần*** 
 + set ***không có tính trùng nhau*** nên nếu có add 2 hay nhiều phần tử trùng nhau vào set thì nó coi như 1 
-+ Lưu ý : set thì không an toàn trong đa luồng 
++ ***Lưu ý*** : set thì không an toàn trong đa luồng , phải sử dụng synchronize bên ngoài nếu cần. 
 
 ### Sử Dụng thế nào ?
 
@@ -98,5 +98,39 @@ Set s = new HashSet();
         }
 ```
 
-https://viblo.asia/nguyen.van.ngoc/posts/AyQMpJ07v0Ek </br>
-https://howtocodevn.wordpress.com/2015/11/05/java-su-khac-nhau-giua-treeset-linkedhashset-va-hashset/
+### Sử khác nhau và các trường hợp dùng HashSet vs. TreeSet vs. LinkedHashSet
++ nói về hiệu xuất thì HashSet là nhanh nhất 
++ còn về sắp xếp thì nên chọn TreeSet
++ còn nếu muốn đọc một Set theo thứ tự mà các phần tử được insert vào thì dùng LinkedHashSet , vì LinkedHashSet sắp xếp theo thứ tự insert vào.
++ Cả 2 HashSet và LinkedHashSet cho phép phần tử null, nhưng TreeSet không cho phép và throws NullPointerExeption nếu insert null.
+
+***HashSet***
++ HashSet được implement bằng cách sử dụng một hash table. Các thành phần không được sắp xếp theo thứ tự.
+
+***TreeSet***
++ được implement bằng cách sử dụng cấu trúc dữ liệu tree, các thành phần trong Set được sắp xếp theo thứ tự.
+
+***LinkedHashSet***
++  được implement như một hash table với mỗi phần tử trong bảng băm này sẽ trỏ đến phần tử đầu tiên của một Linked List. Vì vậy mà các phần tử có thể được sắp xếp.
+
++ ***lưu ý*** : đối với set nào có sự sắp xếp như TreeSet và LinkedHashSet khi ta thêm 1 đối tượng nào đó và thì phải implements Comparable và Override cho hàm compareTo 
+
+```
+class Dog implements Comparable{
+int size;
+
+public Dog(int s) {
+size = s;
+}
+
+public String toString() {
+return size + "";
+}
+
+@Override
+public int compareTo(Dog o) {
+        return size - o.size;
+}
+}
+```
+# Map 
