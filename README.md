@@ -136,7 +136,8 @@ public int compareTo(Dog o) {
 ## Map 
 + Map là một tập dữ liệu được lưu dưới dạng key-value. Một Map không thể chứa những key trùng nhau, nhưng mỗi key thì có thể được ánh xạ đến nhiều hơn một giá trị.
 + HashMap không synchronize và không an toàn với đa luồng(not thread safe).
-[Map hoạt động thế nào](https://kipalog.com/posts/Java-nhung-dieu-co-the-ban-da-biet--Map-HashMap-hoat-dong-nhu-the-nao)
+
++ [Map hoạt động thế nào ?](https://kipalog.com/posts/Java-nhung-dieu-co-the-ban-da-biet--Map-HashMap-hoat-dong-nhu-the-nao)
 
 ### Sử Dụng thế nào ?
 
