@@ -58,6 +58,16 @@
              Object element = itr.next();
              System.out.print(element + " ");
         }
+        
+ //lamda
+ ArrayList<SinhVien> list = new ArrayList();
+       list.add(new SinhVien(1, "adad"));
+       list.add(new SinhVien(2, "ad"));
+       list.add(new SinhVien(3, "aadadd"));
+       list.forEach(sv-> {
+           sv.getMaSV();
+           sv.getTenSV();
+       });
  ```
  
 + cơ chế hoạt động của Iterator như thế nào:
