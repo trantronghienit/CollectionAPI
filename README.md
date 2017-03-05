@@ -133,4 +133,17 @@ public int compareTo(Dog o) {
 }
 }
 ```
-# Map 
+## Map 
++ Map là một tập dữ liệu được lưu dưới dạng key-value. Một Map không thể chứa những key trùng nhau, nhưng mỗi key thì có thể được ánh xạ đến nhiều hơn một giá trị.
++ HashMap không synchronize và không an toàn với đa luồng(not thread safe).
+[Map hoạt động thế nào](https://kipalog.com/posts/Java-nhung-dieu-co-the-ban-da-biet--Map-HashMap-hoat-dong-nhu-the-nao)
+
+### Sử Dụng thế nào ?
+
+
+### HashMap và HashTable khác nhau thế nào 
+![hashmap-hashtable](https://cloud.githubusercontent.com/assets/18228937/23584639/8035b08e-0199-11e7-81ae-37e7ca725cdd.png)
+
+***HashMap***
+
+***
